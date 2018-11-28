@@ -60,6 +60,7 @@ namespace DatingApp.API
             }
             else
             {
+                //setting up global exception handler
                 app.UseExceptionHandler(builder => builder.Run(async context => {
                     context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     var error = context.Features.Get<IExceptionHandlerFeature>();
